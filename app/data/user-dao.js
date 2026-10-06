@@ -106,6 +106,13 @@ function UserDAO(db) {
         }, callback);
     };
 
+    //trying to add another similar function to generate a vuln detection
+    this.getUserByFirstName = (firstName, callback) => {
+        usersCol.findOne({
+            firstName: firstName
+        }, callback);
+    };
+
     this.getNextSequence = (name, callback) => {
         db.collection("counters").findAndModify({
                 _id: name
